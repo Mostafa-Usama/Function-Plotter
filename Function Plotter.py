@@ -54,7 +54,7 @@ class Windown(QWidget):
         grid.addWidget(self.equationLabel, 0, 0)
         grid.addWidget(self.equationText, 0, 1)
         
-        self.minXLabel = QLabel("Min X")
+        self.minXLabel = QLabel("Minimum X")
         self.minXLabel.setStyleSheet(label_style)
         self.minXText = QSpinBox(self)
         self.minXText.setValue(-1)
@@ -64,7 +64,7 @@ class Windown(QWidget):
         grid.addWidget(self.minXLabel, 1, 0)
         grid.addWidget(self.minXText, 1, 1)
         
-        self.maxXLabel = QLabel("Max X")
+        self.maxXLabel = QLabel("Maximum X")
         self.maxXLabel.setStyleSheet(label_style)
         self.maxXText = QSpinBox(self)
         self.maxXText.setValue(1)
@@ -87,7 +87,7 @@ class Windown(QWidget):
         xRange = self.getX(self.minXText.value(), self.maxXText.value())
         yRange = self.getY(equation, xRange)
         if xRange is None:
-            QMessageBox.information(self, "Wrong input", "Make sure Max X is be larger than Min X", QMessageBox.Ok)
+            QMessageBox.information(self, "Wrong input", "Make sure Max X is larger than Min X", QMessageBox.Ok)
         elif yRange == None:
             QMessageBox.information(self, "Wrong input", "Make sure the equation is a function of X, allowed operators are +, -, *, /, ^ eg:'2*x^2+x+5' ", QMessageBox.Ok)
         else:
